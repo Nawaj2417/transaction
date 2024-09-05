@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction Detail</title>
+</head>
+<style>
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse; 
+    }
+    th, td {
+        padding: 5px ;
+        border: 1px solid #ddd;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    th {
+        background-color: #f4f4f4; 
+    }
+ 
+    th.emailwidth{
+        width: 180px;
+    }
+</style>
+<body>
+ <div class="header">
+    <div class="logo">
+        <img src="../static/images/logo.png" alt="Logo" style="width:120px; height:120px;">
+    </div>
+    <h1>Transaction details</h1>
+ </div>
+    <table>
+        <tbody>
+            <tr>
+                <th>Transaction ID:</th>
+                <td>{{ txn.transaction_id }}</td>
+            </tr>
+            <tr>
+                <th>Name:</th>
+                <td>{{ txn.name }}</td>
+            </tr>
+            <tr>
+                <th>Phone:</th>
+                <td>{{ txn.phone }}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{ txn.email }}</td>
+            </tr>
+            <tr>
+                <th>Amount:</th>
+                <td>{{ txn.amount }}</td>
+            </tr>
+            <tr>
+                <th>Transaction Date:</th>
+                <td>{{ txn.transaction_date }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Transactions List</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}"> -->
+    <style>
+     
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        table {
+            width: 100%;
+         border-collapse: collapse; 
+        }
+     
+        th, td {
+            
+            padding: 5px;
+            border: 1px solid #ddd;
+          
+           
+        }
+        th.emailwidth{
+            width: 240px;
+            overflow: scroll;
+        }
+    
+        th {
+            background-color: #f4f4f4; 
+        }
+     
+      
+   
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo" >
+            <img src="../static/images/logo.png" alt="Logo" style="width:120px; height:120px;">
+        </div>
+        <h1>Transactions List</h1>
+    </div>
+
+
+    <table >
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th class="emailwidth">Email</th>
+                <th>Amount</th>
+                <th>Transaction Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for txn in transactions %}
+            <tr>
+                <td>{{ txn.transaction_id }}</td>
+                <td>{{ txn.name }}</td>
+                <td>{{ txn.phone }}</td>
+                <td >{{ txn.email}}</td>
+                <td>{{ txn.amount }}</td>
+                <td>{{ txn.transaction_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
